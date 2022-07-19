@@ -1,0 +1,66 @@
+﻿stringid,ko
+Collection_Title_01,항해 14일 전 일기
+Collection_Title_02,항해 7일째 일기
+Collection_Title_03,항해 20일째 일기
+Collection_Title_04,빈칸
+Collection_Title_05,빈칸
+Collection_Title_06,빈칸
+Collection_Title_07,빈칸
+Collection_Title_08,빈칸
+Collection_Title_09,빈칸
+Collection_Title_10,빈칸
+Collection_Title_11,빈칸
+Collection_Title_12,빈칸
+Collection_Title_13,빈칸
+Collection_Title_14,빈칸
+Collection_Title_15,빈칸
+Collection_Title_16,항해 마지막 일기
+Collection_Contents_01,항해 14일 전 일기에 해당하는 일기의 내용으로 임시데이터값
+Collection_Contents_02,항해 7일째 일기에 해당하는 일기의 내용으로 임시데이터값
+Collection_Contents_03,빈칸
+Collection_Contents_04,빈칸
+Collection_Contents_05,빈칸
+Collection_Contents_06,빈칸
+Collection_Contents_07,빈칸
+Collection_Contents_08,빈칸
+Collection_Contents_09,빈칸
+Collection_Contents_10,빈칸
+Collection_Contents_11,빈칸
+Collection_Contents_12,빈칸
+Collection_Contents_13,빈칸
+Collection_Contents_14,빈칸
+Collection_Contents_15,빈칸
+Collection_Contents_16,빈칸
+UI_MainScreen_PlayGame,접속하기
+UI_MainScreen_Record,기록
+UI_MainScreen_Collection,일기
+UI_MainScreen_Option,설정
+UI_MainScreen_Credit,크레딧
+UI_Collection_Gain_Message,일기 발견!
+UI_Collection_Regain_Message,이미 발견한 일기입니다.
+UI_MainScreen_Loading,접속중...
+UI_MainScreen_Record_CH01,챕터 01
+UI_MainScreen_Record_CH02,챕터 02
+UI_MainScreen_Record_CH03,챕터 03
+UI_MainScreen_Record_CH04,챕터 편지
+UI_MainScreen_Record_CH01_01,우주기록 01
+UI_MainScreen_Record_CH01_02,우주기록 02
+UI_MainScreen_Record_CH01_03,우주기록 03
+UI_MainScreen_Record_CH01_04,우주기록 04
+UI_MainScreen_Record_CH01_05,우주기록 05
+UI_MainScreen_Record_CH02_01,우주기록 06
+UI_MainScreen_Record_CH02_02,우주기록 07
+UI_MainScreen_Record_CH02_03,우주기록 08
+UI_MainScreen_Record_CH02_04,우주기록 09
+UI_MainScreen_Record_CH02_05,우주기록 10
+UI_MainScreen_Record_CH03_01,우주기록 11
+UI_MainScreen_Record_CH03_02,우주기록 12
+UI_MainScreen_Record_CH03_03,우주기록 13
+UI_MainScreen_Record_CH03_04,우주기록 14
+UI_MainScreen_Record_CH03_05,우주기록 15
+UI_MainScreen_Record_CH04_01,우주기록 16
+UI_Option_Music,음악
+UI_Option_On,켜기
+UI_Option_Off,끄기
+UI_Option_Sound,소리
+UI_Option_Language,언어
