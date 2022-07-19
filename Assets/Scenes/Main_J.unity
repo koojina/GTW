@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,10 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -282,7 +282,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 82876997}
   graphicRaycaster: {fileID: 82876995}
-  textMeshPro: []
+  textMeshPros: []
+  spriteRenderer: {fileID: 0}
+  sprites: []
 --- !u!1 &116987929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,7 +1092,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 236898741}
   graphicRaycaster: {fileID: 236898740}
-  textMeshPro: []
+  textMeshPros: []
+  spriteRenderer: {fileID: 0}
+  sprites: []
 --- !u!114 &236898740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1141,10 +1145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4540,12 +4544,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1030883365}
   graphicRaycaster: {fileID: 1030883363}
-  textMeshPro:
+  textMeshPros:
   - {fileID: 951811323}
   - {fileID: 1685571958}
   - {fileID: 1522339820}
   - {fileID: 1158614288}
   - {fileID: 1289924897}
+  spriteRenderer: {fileID: 0}
+  sprites: []
   recordCanvas: {fileID: 82876999}
   collectionCanvas: {fileID: 1759604313}
   optionCanvas: {fileID: 2077946889}
@@ -8025,7 +8031,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCanvas: {fileID: 1030883367}
-  test: 0
 --- !u!4 &1756114571
 Transform:
   m_ObjectHideFlags: 0
@@ -8089,10 +8094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8156,7 +8161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1759604311}
   graphicRaycaster: {fileID: 1759604309}
-  textMeshPro:
+  textMeshPros:
   - {fileID: 1526732784}
   - {fileID: 166529376}
   - {fileID: 1988823717}
@@ -8173,6 +8178,8 @@ MonoBehaviour:
   - {fileID: 739398597}
   - {fileID: 438237570}
   - {fileID: 726166913}
+  spriteRenderer: {fileID: 0}
+  sprites: []
   keyDataString:
   - Collection_Title_01
   - Collection_Title_02
@@ -8306,7 +8313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 14066}
+  m_AnchoredPosition: {x: 0, y: 542}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1800889124
@@ -9526,14 +9533,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 2077946891}
   graphicRaycaster: {fileID: 2077946890}
-  textMeshPro:
-  - {fileID: 252877023}
-  - {fileID: 1349016297}
-  - {fileID: 856468219}
-  - {fileID: 116987932}
-  - {fileID: 1021918319}
-  - {fileID: 297275598}
-  - {fileID: 1191012911}
+  textMeshPros: []
+  spriteRenderer: {fileID: 0}
+  sprites: []
   keyDataString:
   - UI_Option_Music
   - UI_Option_On
@@ -9592,10 +9594,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

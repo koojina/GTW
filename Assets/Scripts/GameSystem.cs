@@ -268,6 +268,7 @@ public class GameSystem : MonoBehaviour
                     scratchObject = GameObject.Find("Scratch");
                 }
                 maskObj.transform.SetParent(scratchObject.transform);
+                
                 v = pos;
                 
             }

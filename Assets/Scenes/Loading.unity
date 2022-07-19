@@ -642,8 +642,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 1981835289}
   graphicRaycaster: {fileID: 1981835287}
-  textMeshPro:
+  textMeshPros:
   - {fileID: 35980545}
+  spriteRenderer: {fileID: 0}
+  sprites: []
   keyDataString:
   - UI_MainScreen_Loading
   cnt: 0

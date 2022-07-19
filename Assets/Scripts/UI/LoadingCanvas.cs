@@ -12,12 +12,12 @@ public class LoadingCanvas : UIController
     public int cnt;
     string currentText;
    // public TextMeshProUGUI writeText;
-    public float delay;
+    
     // Start is called before the first frame update
     void Start()
     {
         LoadingText();
-        
+       
     }
 
     public void LoadingText()
@@ -34,6 +34,7 @@ public class LoadingCanvas : UIController
 
     IEnumerator ShowText(string[] _fullText)
     {
+        delay = 2f;
         currentText = "";
         for (int i = _fullText[0].Length-4; i < _fullText[0].Length; i++)
         {
