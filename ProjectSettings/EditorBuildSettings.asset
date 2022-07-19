@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chapter1_J.unity
     guid: 5824706aeeecdd44facbb0a6cf6bec68
+  - enabled: 1
+    path: Assets/Scenes/Loading.unity
+    guid: d5bd7106514bcd24ea3d975d689cccfc
+  - enabled: 1
+    path: Assets/Scenes/System.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

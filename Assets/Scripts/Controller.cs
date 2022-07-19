@@ -5,10 +5,14 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Controller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerClickHandler
-{
-    public static Vector2 DefaultPos;
-    public FillChecker fillChecker;
+{   public FillChecker fillChecker;
+    public WindowSystem windowSystem;
+
+
+    public static Vector2 DefaultPos;   
     private RectTransform rectTansform;
+    public GameObject In;
+    
  
     void Awake()
     {
@@ -18,9 +22,12 @@ public class Controller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     void Update()
     {
-        if(GetMouse())
+        if (In.activeSelf && fillChecker.check == false)
         {
-            GameSystem.instance.Scratch();
+            if (DustGetMouse())
+            {
+                GameSystem.instance.Scratch();
+            }
         }
 
       if (GameSystem.instance.full == true)
@@ -28,6 +35,8 @@ public class Controller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
             transform.position = Vector2.MoveTowards(transform.position, DefaultPos, 0.001f);
 
         }
+
+
     }
 
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
@@ -58,18 +67,20 @@ public class Controller : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     }
 
-    private bool GetMouse()
+    private bool DustGetMouse()
     {
         if(Input.GetMouseButton(0))
         {
+            if (fillChecker.RayChecker() && fillChecker.check == false)
+            {
+                fillChecker.check = true;
+                windowSystem.StartFadeOut();
+            }
             return true;
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            if (fillChecker.RayChecker())
-            {
-                Debug.Log("모두 지워졌습니다.");
-            }
+          
             return false;
         }
         return false;

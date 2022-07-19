@@ -13,7 +13,7 @@ public class WriteEffect : MonoBehaviour
 
     //타이핑효과 변수
     public string[] fulltext;
-    public int dialog_cnt;
+   public int dialog_cnt;
     string currentText;
 
     //타이핑확인 변수
@@ -21,12 +21,13 @@ public class WriteEffect : MonoBehaviour
     public bool text_full;
     public bool text_cut;
     public TextMeshProUGUI writeText;
-
+    public GameObject writeTextObj;
     //시작과 동시에 타이핑시작
     void Start()
     {
         Get_Typing(dialog_cnt, fulltext);
         writeText = GetComponent<TextMeshProUGUI>();
+        writeTextObj = GetComponent<GameObject>();
     }
 
 
@@ -82,10 +83,12 @@ public class WriteEffect : MonoBehaviour
 
     IEnumerator ShowText(string[] _fullText)
     {
+        yield return new WaitForSeconds(delay);
         //모든텍스트 종료
         if (cnt >= dialog_cnt)
         {
             text_exit = true;
+            writeTextObj.SetActive(false);
             StopCoroutine("showText");
         }
         else

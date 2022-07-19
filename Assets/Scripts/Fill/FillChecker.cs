@@ -7,7 +7,7 @@ public class FillChecker : MonoBehaviour
     [SerializeField] private Transform[] pivot;
     [SerializeField] private LayerMask layerMask;
     public float viewRadius;
-
+    public bool check = false;
     public bool RayChecker()
     {
         RaycastHit2D hit2D;

@@ -38,7 +38,7 @@ public class LoadingCanvas : UIController
         for (int i = _fullText[0].Length-4; i < _fullText[0].Length; i++)
         {
             currentText = _fullText[0].Substring(0, i + 1);
-            textMeshPro[0].text = currentText;
+            textMeshPros[0].text = currentText;
             yield return new WaitForSeconds(delay);
             if (i == _fullText[0].Length - 1)
                 i = _fullText[0].Length - 5;

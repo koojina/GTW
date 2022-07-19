@@ -12,7 +12,7 @@ public class GameSystem : MonoBehaviour
         NULL = -1, W, O, R, L, D, DEL, ENTER
     }
 
-
+   Queue<GameObject> maskQueue = new Queue<GameObject>();
 
     public static GameSystem instance;
     public LayerMask layerMask;
@@ -58,7 +58,7 @@ public class GameSystem : MonoBehaviour
         RandomPosition();
 
 
-        //   Debug.Log($"출력테스트 : { DataRead.Instance.stringTable["Collection_Title_01"]}");
+       
     }
 
     #region 오브젝트생성
@@ -170,7 +170,6 @@ public class GameSystem : MonoBehaviour
     {
         foreach (ButtonController button in buttons)
         {
-
             button.Show();
         }
     }
@@ -262,16 +261,22 @@ public class GameSystem : MonoBehaviour
         {
             if (pos != v)
             {
-                GameObject gameObject = Instantiate(mask, pos, Quaternion.identity);
+                GameObject maskObj = Instantiate(mask, pos, Quaternion.identity);
 
                 if (scratchObject == null)
                 {
                     scratchObject = GameObject.Find("Scratch");
                 }
-                gameObject.transform.SetParent(scratchObject.transform);
+                maskObj.transform.SetParent(scratchObject.transform);
                 v = pos;
+                
             }
         }
+    }
+
+    public void DelScratch()
+    {
+        scratchObject.SetActive(false);
     }
 
 
