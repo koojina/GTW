@@ -12,9 +12,11 @@ public class GameSystem : MonoBehaviour
         NULL = -1, W, O, R, L, D, DEL, ENTER
     }
 
-   Queue<GameObject> maskQueue = new Queue<GameObject>();
+  
 
     public static GameSystem instance;
+    public bool TextEnd;
+
     public LayerMask layerMask;
     public Slider gauge;
 
@@ -22,10 +24,10 @@ public class GameSystem : MonoBehaviour
     public bool full = false;
     public GameObject mask;
     public GameObject scratchObject;
+   
     private Vector3 v;
 
     // public LayerMask layerMask;
-
     public TextMeshProUGUI viewer;
     public PasswordButton[] buttons;
 
@@ -38,7 +40,10 @@ public class GameSystem : MonoBehaviour
     [SerializeField]
     private int length;
 
+    public GameObject content;
+    public Vector2 contentPosition;
 
+    public string nextSceneName;
 
     private void Awake()
     {
@@ -57,8 +62,20 @@ public class GameSystem : MonoBehaviour
 
         RandomPosition();
 
+        TextEnd = false;
 
-       
+        contentPosition = content.GetComponent<RectTransform>().anchoredPosition;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            Debug.Log("ddd");
+            contentPosition.y += 1f;
+        }
+        //if (Input.GetKeyDown("s"))
+
     }
 
     #region 오브젝트생성
@@ -91,8 +108,7 @@ public class GameSystem : MonoBehaviour
             buttons[i].transform.position = buttonPosition[randomPosition[0]];
             randomPosition.RemoveAt(0);
         }
-
-
+        
     }
 
     #endregion 
@@ -101,6 +117,7 @@ public class GameSystem : MonoBehaviour
 
     public void GetButton(int value)
     {
+
         ButtonType buttonType = (ButtonType)value;
 
         string text = buttons[value].buttonText;
@@ -120,22 +137,30 @@ public class GameSystem : MonoBehaviour
         {
             if (viewer.gameObject.activeSelf)
             {
-
                 viewer.text = Check(viewer.text);
-                HideButton();
+                ClickHideButton();
                 if (viewer.text == wrong)
                 {
-
                     Invoke("Revalue", 1.0f);
                 }
             }
-
+            else
+            {
+                if (TextEnd)
+                {
+                    Invoke("ShowButton", 1.0f);
+                    
+                }
+            }
         }
         else if (viewer.text != wrong || viewer.text != correct)
         {
             if (viewer.text.Length >= 10)
                 return;
-            viewer.text += buttonType.ToString();
+           
+            
+                viewer.text += buttonType.ToString();
+            
         }
     }
 
@@ -149,6 +174,7 @@ public class GameSystem : MonoBehaviour
         string correct = "정답";
         if (value == "WORLD")
         {
+            GameManager.Instance.NextScene(nextSceneName);
             return correct;
         }
         else
@@ -162,27 +188,36 @@ public class GameSystem : MonoBehaviour
     private void Revalue()
     {
         viewer.text = "";
-        ShowButton();
+        ClickShowButton();
     }
 
     #endregion
-    private void ShowButton()
+    private void ClickShowButton()
     {
         foreach (ButtonController button in buttons)
         {
-            button.Show();
+            button.ClickShow();
         }
     }
 
-    private void HideButton()
+    private void ClickHideButton()
     {
         foreach (ButtonController button in buttons)
         {
-
-            button.Hide();
+            button.ClickHide();
         }
     }
 
+    public void ShowButton()
+    {
+      
+            viewer.gameObject.SetActive(true);
+            foreach (ButtonController button in buttons)
+            {
+                button.Show();
+            }
+        
+    }
 
 
     #region 버튼게이지시스템
@@ -263,10 +298,7 @@ public class GameSystem : MonoBehaviour
             {
                 GameObject maskObj = Instantiate(mask, pos, Quaternion.identity);
 
-                if (scratchObject == null)
-                {
-                    scratchObject = GameObject.Find("Scratch");
-                }
+         
                 maskObj.transform.SetParent(scratchObject.transform);
                 
                 v = pos;

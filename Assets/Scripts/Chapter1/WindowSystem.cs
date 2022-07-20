@@ -7,6 +7,7 @@ using TMPro;
 public class WindowSystem : UIController
 {
     public GameObject wirteText;
+    public GameObject WorldText;
     public GameObject enter;
     public GameObject In;
     public GameObject lightObj;
@@ -15,12 +16,14 @@ public class WindowSystem : UIController
 
     public ButtonController buttonController;
 
+   
     [SerializeField]
     private float lightTimer;
     void Start()
     {
         StartCoroutine("FadeIn");
         lightImage = lightObj.GetComponent<Image>();
+        GameSystem.instance.nextSceneName = "Record02";
     }
 
     // Update is called once per frame
@@ -43,7 +46,7 @@ public class WindowSystem : UIController
         yield return StartCoroutine(base.FadeOut());
         
         GameSystem.instance.DelScratch();
-        buttonController.Show();
+        buttonController.ClickShow();
         In.SetActive(false);
         //loading ¶ç¿ì±â
         StartCoroutine("LightSprite");
@@ -69,4 +72,10 @@ public class WindowSystem : UIController
         }
         wirteText.SetActive(true);
     }
+
+    //public void StartWorld()
+    //{
+    //    WorldText.SetActive(true);
+
+    //}
 }

@@ -34,7 +34,7 @@ public class LoadingCanvas : UIController
 
     IEnumerator ShowText(string[] _fullText)
     {
-        delay = 2f;
+        delay = 1f;
         currentText = "";
         for (int i = _fullText[0].Length-4; i < _fullText[0].Length; i++)
         {
