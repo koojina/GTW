@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    public string sceneName = "System";
+    public string sceneName = "Record01";
     private AsyncOperation operation;
 
     public static LoadingManager instance;

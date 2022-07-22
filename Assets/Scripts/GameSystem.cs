@@ -40,9 +40,7 @@ public class GameSystem : MonoBehaviour
     [SerializeField]
     private int length;
 
-    public GameObject content;
-    public Vector2 contentPosition;
-
+   
     public string nextSceneName;
 
     private void Awake()
@@ -64,19 +62,14 @@ public class GameSystem : MonoBehaviour
 
         TextEnd = false;
 
-        contentPosition = content.GetComponent<RectTransform>().anchoredPosition;
     }
 
-    void Update()
+     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log("ddd");
-            contentPosition.y += 1f;
-        }
-        //if (Input.GetKeyDown("s"))
-
+      
     }
+
+   
 
     #region 오브젝트생성
     private void RandomPosition()

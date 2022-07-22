@@ -11,7 +11,7 @@ public class WindowSystem : UIController
     public GameObject enter;
     public GameObject In;
     public GameObject lightObj;
-   
+    public GameObject logView;
     public Image lightImage;
 
     public ButtonController buttonController;
@@ -38,7 +38,7 @@ public class WindowSystem : UIController
         yield return StartCoroutine(base.FadeIn());       
         enter.SetActive(true);
         In.SetActive(true);
-       
+        logView.SetActive(true);
     }
 
     public override IEnumerator FadeOut()

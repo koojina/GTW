@@ -20,17 +20,22 @@ public class WriteEffect : MonoBehaviour
     public bool text_exit;
     public bool text_full;
     public bool text_cut;
-   
-    public TextMeshProUGUI writeText;
+    public int textArrange;
+    public TextMeshProUGUI[] writeText;
 
     public PasswordButton passwordButton;
-  
+
+    public GameObject content;
+    public ScrollRect scrollRect;
+    private float scrollRextPosY;
+
     //시작과 동시에 타이핑시작
     void Start()
     {
-       
+        textArrange = 0;
         Get_Typing(dialog_cnt, fulltext);
-        writeText = GetComponent<TextMeshProUGUI>();
+        // writeText = GetComponent<TextMeshProUGUI>();
+        scrollRextPosY = 0f;
     }
 
 
@@ -48,12 +53,16 @@ public class WriteEffect : MonoBehaviour
     //다음버튼함수
     public void End_Typing()
     {
-     
 
             //다음 텍스트 호출
             if (text_full == true)
             {
-                cnt++;
+            if (textArrange >= 2)
+            {
+                scrollRextPosY += 120;
+                scrollRect.content.localPosition = new Vector2(0, scrollRextPosY);
+            }
+            cnt++;
                 text_full = false;
                 text_cut = false;
                 StartCoroutine(ShowText(fulltext));
@@ -108,12 +117,12 @@ public class WriteEffect : MonoBehaviour
                 }
                 //단어하나씩출력
                 currentText = _fullText[cnt].Substring(0, i + 1);
-                writeText.text = currentText;
+                writeText[textArrange].text = currentText;
                 yield return new WaitForSeconds(delay);
             }
             //탈출시 모든 문자출력
             Debug.Log("Typing 종료");
-            writeText.text = _fullText[cnt];
+            writeText[textArrange].text = _fullText[cnt];
             yield return new WaitForSeconds(Skip_delay);
 
             //스킵_지연후 종료
@@ -124,5 +133,6 @@ public class WriteEffect : MonoBehaviour
                 GameSystem.instance.TextEnd = true;
             }
         }
+        textArrange += 1;
     }
 }

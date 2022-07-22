@@ -13,10 +13,19 @@ public class MainCanvas : UIController
     private string[] valueDataString;
     public string[] keyDataString;
 
-    
+    public GameObject planet;
+    [SerializeField]
+    private float rotateSpeed;
+
      void Start()
     {
+       
         MenuData();
+    }
+
+     void Update()
+    {
+        PlanetRotate();
     }
     public void GameStartButton()
     {
@@ -55,7 +64,10 @@ public class MainCanvas : UIController
     }
 
     
-
+    public void PlanetRotate()
+    {
+        planet.transform.Rotate(Vector3.back * Time.deltaTime * rotateSpeed );
+    }
 
 
 }
